@@ -1,5 +1,11 @@
+import Date from "./Date";
 const Header = () => {
-    return <h1> To do List</h1>;
-  }
+  return (
+    <div>
+      <h1> To do List</h1>;
+      <Date />
+    </div>
+  )
+}
 
-  export default Header;
+export default Header;
