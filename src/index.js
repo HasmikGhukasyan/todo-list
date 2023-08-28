@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client"
 import Header from "./components/Header"
 import Search from "./components/Search"
 import TodoList from "./components/TodoList"
-import UserList from "./components/UserList";
+import Button from "./components/Button";
+import Input from "./components/Input";
 
 const App = () => {
 
@@ -12,7 +13,7 @@ const App = () => {
       <Header />
       <Search />
       <TodoList />
-      <UserList/>
+      <div><Input /><Button text="add" color="blue" /></div>
     </div>
   )
 }
