@@ -1,7 +1,12 @@
-const TodoListItem = () => {
+const TodoListItem = ({ text, important }) => {
+
+    const style = {
+        color: important ? "red" : "black"
+    }
+
     return (
-        <li> Learn Js</li>
+        <li style={style}> {text}</li>
     )
 }
 
- export default TodoListItem;
+export default TodoListItem;

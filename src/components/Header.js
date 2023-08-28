@@ -1,9 +1,10 @@
-import Date from "./Date";
+import DateTime from "./DateTime";
+
 const Header = () => {
   return (
-    <div>
+    <div> 
       <h1> To do List</h1>
-      <Date />
+      <DateTime text="Last update: 2023.08.23 21:44"/>
     </div>
   )
 }
