@@ -3,12 +3,14 @@
 body {
     margin: 0;
     padding: 0;
-    background-color:#18163A;
     font-family: 'Roboto', sans-serif;
     display: flex;
+    background-color: #ffdfafef;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
@@ -17,12 +19,12 @@ body {
     flex-direction: column;
     width: 425px;
     height: 425px;
-    background-color: #c9ef8d;
-    border-radius: 28px;
+    background-color: #fff;
+    border-radius: 20px;
 }
 
 .main {
-    padding: 0 16px 20px 16px;
+    padding: 0 24px 24px 24px;
     display: flex;
     flex-direction: column;
     flex: 1;

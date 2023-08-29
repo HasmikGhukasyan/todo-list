@@ -4,8 +4,8 @@ import "./search.css"
 const Search = () => {
     return (
     <div className="searchcontainer">
-      <input className="searchInput" placeholder="Type text for"/>
-      <Button text="Search" color="Blue"/>
+      <input className="searchInput" placeholder="Search..."/>
+      <Button className="searchBtn" text="Search" color="white"/>
       </div>
   )}
 

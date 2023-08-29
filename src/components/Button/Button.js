@@ -1,11 +1,11 @@
 import "./button.css"
 
-const Button = ({text,color, className}) => {
+const Button = ({text,color = "", className}) => {
     const style = {
         color: color
     }
     return (
-        <button className={className} style={{color}}>{text}</button>
+        <button className={`app-btn ${className}`} style={{color}}>{text}</button>
     )
 }
 

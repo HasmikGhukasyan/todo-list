@@ -3,16 +3,16 @@
     display: flex;
     padding: 20px 16px 20px 16px;
     margin-bottom: 20px;
-    border-radius: 28px 28px 0 0;
-    justify-content: space-between;
+    border-radius: 20px 20px 0 0;
     text-transform: uppercase;
     background-color: white;
     color: #fff;
 }
 
 .headerTitle {
+    text-align: center;
     margin: 0px;
     flex: 1;
-    color: #18163A;
+    color: #5259f9;
     
 }
