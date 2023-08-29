@@ -1,0 +1,18 @@
+.searchInput {
+    display: flex;
+    border: none;
+    padding: 8px;
+    margin-right: 24px;
+    border-radius: 4px;
+    width: 260px;
+}
+::placeholder{
+    font-size: 16px;
+    color: blue;
+}
+.searchcontainer {
+display: flex;
+justify-items: center;
+width: 100%;
+justify-content: space-between;
+}

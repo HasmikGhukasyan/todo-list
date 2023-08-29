@@ -1,19 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
-import Header from "./components/Header"
-import Search from "./components/Search"
-import TodoList from "./components/TodoList"
-import Button from "./components/Button";
-import Input from "./components/Input";
+import Header from "./components/Header/Header"
+import Search from "./components/Search/Search"
+import TodoList from "./components/ToDoList/TodoList"
+import AddItem from "./components/AddItem/AddItem";
+import "./index.css"
 
 const App = () => {
 
   return (
-    <div>
+    <div className="App">
       <Header />
-      <Search />
-      <TodoList />
-      <div><Input /><Button text="add" color="blue" /></div>
+      <div className="main">
+        <Search />
+        <TodoList />
+        <AddItem />
+      </div>
     </div>
   )
 }

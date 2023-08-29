@@ -1,0 +1,18 @@
+
+.header {
+    display: flex;
+    padding: 20px 16px 20px 16px;
+    margin-bottom: 20px;
+    border-radius: 28px 28px 0 0;
+    justify-content: space-between;
+    text-transform: uppercase;
+    background-color: white;
+    color: #fff;
+}
+
+.headerTitle {
+    margin: 0px;
+    flex: 1;
+    color: #18163A;
+    
+}

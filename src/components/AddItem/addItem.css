@@ -1,0 +1,14 @@
+.AddItem {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.addInput {
+    display: flex;
+    border: none;
+    padding: 8px;
+    margin-right: 24px;
+    border-radius: 4px;
+    width: 260px;
+}

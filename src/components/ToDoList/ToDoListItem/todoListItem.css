@@ -1,0 +1,22 @@
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin-bottom: 16px;
+    list-style-type: none;
+}
+
+.taskContainer {
+    background-color: white;
+    padding: 8px;
+    width: 184px;
+    border-radius: 4px;
+}
+
+.buttonContainer {
+    display: flex;
+}
+
+.taskText{
+    font-style: italic;
+}
