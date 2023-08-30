@@ -11,8 +11,19 @@
     border-radius: 4px;
     width: 260px;
     border-color: #5259f9;
+    outline: none;
 }
 
 .addBtn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
     background-color: #5259f9;
+    transition: all 0.3s ease;
+}
+
+.addBtn:hover {
+    background-color: #3a40af;
 }

@@ -1,5 +1,6 @@
-import Button from "../../Button/Button";
 import "./todoListItem.css"
+import {FaTrash, FaCheck, FaExclamation} from "react-icons/fa6"
+
 const TodoListItem = ({ text, important }) => {
 
     const style = {
@@ -11,9 +12,9 @@ const TodoListItem = ({ text, important }) => {
             <li className="task" style={style}> {text}</li>
         </div>
         <div className="buttonContainer">
-            <Button text="Edit" color={"white"} className="todo-btn  editBtn" />
-            <Button text="Priority" color={"white"} className="todo-btn priorBtn" />
-            <Button text="X" color={"white"} className="todo-btn deleteBtn" />
+            <button className="done-btn"><FaCheck/  ></button>
+            <button className="important-btn"><FaExclamation/></button>
+            <button className="delete-btn"><FaTrash/></button>
         </div>
     </div>
 

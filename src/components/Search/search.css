@@ -5,6 +5,7 @@
     border-radius: 4px;
     width: 260px;
     border-color: #5259f9;
+    outline: none;
 }
 
 ::placeholder {
@@ -19,6 +20,45 @@
     justify-content: space-between;
 }
 
-.searchBtn {
+.search-btn-container {
+    display: flex;
+}
+
+
+.searchcontainer button {
+    padding: 5px 15px;
+    margin-left: 4px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.search-btn-all {
     background-color: #5259f9;
 }
+
+.search-btn-all:hover {
+    background-color: #333df7;
+}
+
+.search-btn-done {
+    background-color: #96C291;
+}
+
+.search-btn-done:hover {
+    background-color: #496046;
+}
+
+.search-btn-important {
+    background-color: rgb(251, 108, 108);
+}
+
+.search-btn-important:hover {
+    background-color: rgb(253, 43, 43);
+}
+
+
+
