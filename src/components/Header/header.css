@@ -1,13 +1,13 @@
 
 .header {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     padding: 20px 16px 20px 16px;
     margin-bottom: 20px;
     border-radius: 20px 20px 0 0;
     text-transform: uppercase;
-    background-color: white;
+    background-color: #5259f9;
     color: #fff;
 }
 
@@ -15,12 +15,14 @@
     text-align: center;
     margin: 0;
     margin-right: 16px;
-    color: #5259f9;
+    color: white;
+    font-size: 32px;
+    line-height: 25px;
     
 }
 
 .info {
-color: #5259f9;
+color: #ffffff;
 text-transform: none;
 margin: 0 4px;
 font-size: 12px;

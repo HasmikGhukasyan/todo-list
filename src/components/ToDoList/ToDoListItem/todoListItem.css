@@ -4,6 +4,7 @@
     flex: 1;
     margin: 8px 0;
     list-style-type: none;
+    transition: all 0.3s ease;
 }
 
 .taskContainer {
@@ -11,8 +12,12 @@
     padding: 8px;
     width: 184px;
     border-radius: 4px;
+
 }
 
+.taskContainer:hover {
+    background-color: #cccccc3d
+}
 
 .buttonContainer {
     display: flex;
@@ -33,6 +38,7 @@
 .done-btn {
     background-color: #96C291;
 }
+
 .done-btn:hover {
     background-color: #6b8c67;
 }
@@ -40,6 +46,7 @@
 .important-btn {
     background-color: #FFC436;
 }
+
 .important-btn:hover {
     background-color: #d4a12c;
 }
@@ -47,6 +54,7 @@
 .delete-btn {
     background-color: #EF6262;
 }
+
 .delete-btn:hover {
     background-color: #ca5050;
 }
