@@ -4,7 +4,8 @@ import {FaTrash, FaCheck, FaExclamation} from "react-icons/fa6"
 const TodoListItem = ({ text, important }) => {
 
     const style = {
-        color: important ? "#EF6262" : "blue"
+        color: important ? "#EF6262" : "blue",
+        fontWeight: important ? "bold" : "unset"
     }
 
     return (<div className="listItem">
