@@ -6,28 +6,28 @@ import { FaTrash, FaCheck, FaExclamation } from "react-icons/fa6"
 
 
 class TodoListItem extends Component {
-     state = {
+    state = {
         isDone: false,
         isImportant: this.props.important
     }
-onImportant = () => {
-    this.setState({
-        isImportant: !this.state.isImportant
-    })
-}
+    onImportant = () => {
+        this.setState({
+            isImportant: !this.state.isImportant
+        })
+    }
     onDone = () => {
         this.setState({
-            isDone:!this.state.isDone
+            isDone: !this.state.isDone
         })
-        
+
     }
 
     render() {
         const { text } = this.props
-        const {isDone,isImportant} = this.state
+        const { isDone, isImportant } = this.state
 
         const textStyle = {
-            color: isDone ? "#aaa": isImportant ? "#EF6262" : "blue",
+            color: isDone ? "#aaa" : isImportant ? "#EF6262" : "blue",
             fontWeight: isDone ? "normal" : isImportant ? "bold" : "unset",
             textDecoration: isDone ? "line-through" : "none",
 
