@@ -27,7 +27,7 @@ class TodoListItem extends Component {
         const { isDone, isImportant } = this.state
 
         const textStyle = {
-            color: isDone ? "#aaa" : isImportant ? "#EF6262" : "blue",
+            color: isDone ? "#aaa" : isImportant ? "#EF6262" : "lightblue",
             fontWeight: isDone ? "normal" : isImportant ? "bold" : "unset",
             textDecoration: isDone ? "line-through" : "none",
 
