@@ -4,10 +4,11 @@ import "./todoList.css"
 
 
 class TodoList extends Component {
+
   render() {
     const { items } = this.props
     const data = items.map(el => {
-      return (<TodoListItem text={el.text} important={el.important} key={el.id} />)
+      return (<TodoListItem text={el.text} important={el.important} key={el.id} onClick={ } />)
     })
     return (
       <ul className="itemContainer">

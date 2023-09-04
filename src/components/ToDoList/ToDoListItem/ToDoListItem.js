@@ -23,7 +23,7 @@ class TodoListItem extends Component {
     }
 
     render() {
-        const { text } = this.props
+        const { text, onClick } = this.props
         const { isDone, isImportant } = this.state
 
         const textStyle = {
@@ -41,7 +41,7 @@ class TodoListItem extends Component {
             <div className="buttonContainer">
                 <button className="done-btn" onClick={this.onDone}><FaCheck /></button>
                 <button className="important-btn" onClick={this.onImportant}><FaExclamation /></button>
-                <button className="delete-btn"><FaTrash /></button>
+                <button className="delete-btn" onClick={onClick}><FaTrash /></button>
             </div>
         </div>
 
