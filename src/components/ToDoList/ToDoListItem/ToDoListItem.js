@@ -41,7 +41,7 @@ class TodoListItem extends Component {
             <div className="buttonContainer">
                 <button className="done-btn" onClick={this.onDone}><FaCheck /></button>
                 <button className="important-btn" onClick={this.onImportant}><FaExclamation /></button>
-                <button className="delete-btn" onClick={onClick}><FaTrash /></button>
+                <button className="delete-btn"><FaTrash /></button>
             </div>
         </div>
 
