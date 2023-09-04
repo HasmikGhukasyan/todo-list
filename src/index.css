@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 464px;
-    height: 425px;
+    min-height: 425px;
     background-color: #fff;
     border-radius: 20px;
 }

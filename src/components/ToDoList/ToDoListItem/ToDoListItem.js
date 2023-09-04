@@ -27,7 +27,7 @@ class TodoListItem extends Component {
         const { isDone, isImportant } = this.state
 
         const textStyle = {
-            color: isDone ? "#aaa" : isImportant ? "#EF6262" : "lightblue",
+            color: isDone ? "#aaa" : isImportant ? "#EF6262" : "blue",
             fontWeight: isDone ? "normal" : isImportant ? "bold" : "unset",
             textDecoration: isDone ? "line-through" : "none",
 
@@ -41,7 +41,7 @@ class TodoListItem extends Component {
             <div className="buttonContainer">
                 <button className="done-btn" onClick={this.onDone}><FaCheck /></button>
                 <button className="important-btn" onClick={this.onImportant}><FaExclamation /></button>
-                <button className="delete-btn"><FaTrash /></button>
+                <button className="delete-btn" onClick={onClick}><FaTrash /></button>
             </div>
         </div>
 

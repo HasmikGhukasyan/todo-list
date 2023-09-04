@@ -5,22 +5,25 @@ import Search from "./components/Search"
 import TodoList from "./components/ToDoList"
 import AddItem from "./components/AddItem";
 import "./index.css"
+import AlertMessage from "./components/AlertMessage";
 
 const App = () => {
   const items = [
-    {text:"Learn JS", important:true, id: 1},
-    {text:"Drink tea", important:false, id: 2},
-    {text:"Learn React", important:true, id: 3},
-    {text:"Learn Typescript", important:true, id: 4}
+    { text: "Learn JS", important: true, id: 1 },
+    { text: "Drink tea", important: false, id: 2 },
+    { text: "Learn React", important: true, id: 3 },
+    { text: "Learn Typescript", important: true, id: 4 }
   ]
-  
+
   return (
     <div className="App">
-      <Header done={8} important={23}/>
+      <Header done={8} important={23} />
       <div className="main">
         <Search />
+        <AlertMessage text={"Info Message"} type={"info"} />
         <TodoList items={items} />
         <AddItem />
+        <AlertMessage text={"Error Message"} type={"error"} />
       </div>
     </div>
   )
