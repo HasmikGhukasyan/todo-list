@@ -17,11 +17,13 @@ class App extends Component {
   }
 
   AddItemHandler = (text) => {
+    const id = this.state.items.length ? this.state.items[this.state.items.length - 1].id + 1 : 1
     const newItem = {
       text,
+      id,
       important: false,
-      id: this.state.items[this.state.items.length - 1].id + 1
     }
+
 
     this.setState((prevState) => {
       return {
@@ -30,9 +32,30 @@ class App extends Component {
     })
   }
 
-  deleteHandler = (whichItem) => {
-    this.setState({ items: this.state.items.filter(el => el.id !== whichItem) })
+  deleteHandler = (id) => {
+    this.setState(({ items }) => {
+      const idx = items.findIndex((el) => el.id === id)
+
+      return {
+        items: [
+          ...items.slice(0, idx),
+          ...items.slice(idx + 1)]
+      }
+    })
   }
+
+  editHandler = (id, value) => {
+    this.setState(({ items }) => {
+      const idx = items.findIndex((el) => el.id === id)
+      const arr = [...items]
+      arr[idx].text = value
+      return {
+        items: arr
+      }
+    })
+  }
+
+
 
   render() {
 
@@ -41,7 +64,7 @@ class App extends Component {
         <Header done={8} important={23} />
         <div className="main">
           <Search />
-          <TodoList items={this.state.items} deleteHandler={this.deleteHandler} />
+          <TodoList items={this.state.items} deleteHandler={this.deleteHandler} editHandler={this.editHandler} />
           <AddItem AddItemHandler={this.AddItemHandler} />
         </div>
       </div>

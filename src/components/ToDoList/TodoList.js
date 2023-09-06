@@ -7,9 +7,15 @@ class TodoList extends Component {
 
 
   render() {
-    const { items, deleteHandler } = this.props
+    const { items, deleteHandler, editHandler } = this.props
     const data = items.map(el => {
-      return (<TodoListItem text={el.text} important={el.important} key={el.id} onClick={() => deleteHandler(el.id)} />)
+      return (<TodoListItem
+        text={el.text}
+        important={el.important}
+        key={el.id}
+        onClick={() => deleteHandler(el.id)}
+        onEdit={editHandler}
+        id={el.id} />)
     })
     return (
       <ul className="itemContainer">

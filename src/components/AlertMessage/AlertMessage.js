@@ -8,12 +8,15 @@ export default class AllertMessage extends Component {
         const style = {}
         switch (type) {
             case "error":
-                style.backgroundColor = "#EF6262";
+                style.backgroundColor = "#F7DBDB";
+                style.color = "#721C24";
                 break;
             case "info":
-                style.backgroundColor = "#468B97";
+                style.backgroundColor = "#D7F0FD";
+                style.color = "#125965";
                 break;
-            default: style.backgroundColor = "#eee"; break
+            default: style.backgroundColor = "#eee";
+                break
         }
 
         return (

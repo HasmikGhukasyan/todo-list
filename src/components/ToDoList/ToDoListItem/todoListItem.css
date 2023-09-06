@@ -59,3 +59,11 @@
 .delete-btn:hover {
     background-color: #ca5050;
 }
+
+.edit-btn {
+    background-color: #D8B4F8;
+}
+
+.edit-btn:hover {
+    background-color: #c998f5;
+}

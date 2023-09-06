@@ -1,10 +1,12 @@
 import { Component } from "react";
 import "./search.css"
+import AllertMessage from "../AlertMessage/AlertMessage";
 
 
 class Search extends Component {
   render() {
-    return (
+    return (<div>
+
       <div className="searchcontainer">
         <input className="searchInput" placeholder="Search..." />
         <div className="search-btn-container">
@@ -13,6 +15,8 @@ class Search extends Component {
           <button className="search-btn-all">All</button>
         </div>
       </div>
+      <AllertMessage type="info" text="Info message" />
+    </div>
     )
   }
 }

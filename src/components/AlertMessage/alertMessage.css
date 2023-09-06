@@ -1,7 +1,6 @@
 .alert-container {
     display: flex;
     padding: 8px;
-    color: black;
-    margin-top: 16px;
+    margin-top: 8px;
     border-radius: 4px;
 }

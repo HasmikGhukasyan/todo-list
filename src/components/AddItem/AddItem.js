@@ -1,5 +1,6 @@
 import { Component } from "react"
 import "./addItem.css"
+import AllertMessage from "../AlertMessage/AlertMessage"
 
 
 class AddItem extends Component {
@@ -18,11 +19,18 @@ class AddItem extends Component {
     this.setState({ inputValue: "" })
   }
   render() {
-    return (
+    return (<div>
       <div className="AddItem" >
-        <input className="addInput" value={this.state.inputValue} placeholder="New Task..." onChange={this.InputHandler} />
+        <input
+          className="addInput"
+          value={this.state.inputValue}
+          placeholder="New Task..."
+          onChange={this.InputHandler}
+        />
         <button className="addBtn" onClick={this.onBtnClick}>Add</button>
       </div>
+      <AllertMessage text="Error Message" type="error" />
+    </div>
     )
   }
 }
