@@ -9,11 +9,33 @@ import "./index.css"
 class App extends Component {
   state = {
     items: [
-      { text: "Learn JS", important: true, id: 1 },
-      { text: "Drink tea", important: false, id: 2 },
-      { text: "Learn React", important: true, id: 3 },
-      { text: "Learn Typescript", important: true, id: 4 }
-    ]
+      { text: "Learn JS", important: true, done: false, id: 1 },
+      { text: "Drink tea", important: false, done: false, id: 2 },
+      { text: "Learn React", important: true, done: false, id: 3 },
+      { text: "Learn Typescript", important: true, done: false, id: 4 }
+    ],
+  }
+
+  doneHandler = (id) => {
+    this.setState(({ items }) => {
+      const arr = [...items]
+      const idx = arr.findIndex(el => el.id === id)
+      arr[idx].done = !arr[idx].done
+      return {
+        items: arr
+      }
+    })
+  }
+
+  importantHandler = (id) => {
+    this.setState(({ items }) => {
+      const arr = [...items]
+      const idx = arr.findIndex(el => el.id === id)
+      arr[idx].important = !arr[idx].important;
+      return {
+        items: arr
+      }
+    })
   }
 
   AddItemHandler = (text) => {
@@ -57,6 +79,7 @@ class App extends Component {
 
 
 
+
   render() {
 
     return (
@@ -64,7 +87,12 @@ class App extends Component {
         <Header done={8} important={23} />
         <div className="main">
           <Search />
-          <TodoList items={this.state.items} deleteHandler={this.deleteHandler} editHandler={this.editHandler} />
+          <TodoList
+            items={this.state.items}
+            doneHandler={this.doneHandler}
+            importantHandler={this.importantHandler}
+            deleteHandler={this.deleteHandler} editHandler={this.editHandler}
+          />
           <AddItem AddItemHandler={this.AddItemHandler} />
         </div>
       </div>
