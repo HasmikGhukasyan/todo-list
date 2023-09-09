@@ -13,7 +13,6 @@ class AddItem extends Component {
   InputHandler = (event) => {
     this.setState({
       inputValue: event.target.value,
-      isError: false
     })
   }
 
@@ -24,7 +23,9 @@ class AddItem extends Component {
       })
       return
     }
-
+    this.setState({
+      isError: false
+    })
     this.props.AddItemHandler(this.state.inputValue);
     this.setState({ inputValue: "" })
   }

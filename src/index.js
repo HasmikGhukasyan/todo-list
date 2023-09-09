@@ -16,6 +16,14 @@ class App extends Component {
     ],
   };
 
+  searchHandler = (text) => {
+    this.setState(({ items }) => {
+      return {
+        items: items.filter(el => el.text.toLowerCase().includes(text.toLowerCase()))
+      }
+    })
+  }
+
   doneHandler = (id) => {
     this.setState(({ items }) => {
       const arr = [...items];
@@ -84,7 +92,7 @@ class App extends Component {
       <div className="App">
         <Header done={8} important={23} />
         <div className="main">
-          <Search />
+          <Search searchHandler={this.searchHandler} />
           <TodoList
             items={this.state.items}
             doneHandler={this.doneHandler}
