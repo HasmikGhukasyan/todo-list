@@ -68,7 +68,7 @@ class App extends Component {
   editHandler = (id, value) => {
     this.setState({
       items: this.state.items.map((el) => {
-        if (el.id == id) {
+        if (el.id === id) {
           return {
             ...el,
             text: value,

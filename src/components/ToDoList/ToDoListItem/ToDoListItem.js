@@ -1,6 +1,8 @@
 import { Component } from "react"
 import "./todoListItem.css"
-import { FaTrash, FaCheck, FaExclamation, FaPen } from "react-icons/fa6"
+import { FaTrash, FaCheck, FaExclamation, FaPen, FaCircleCheck } from "react-icons/fa6"
+import { validateInput } from "../../../utils/validator"
+import AllertMessage from "../../AlertMessage/AlertMessage"
 
 
 
@@ -8,7 +10,8 @@ import { FaTrash, FaCheck, FaExclamation, FaPen } from "react-icons/fa6"
 class TodoListItem extends Component {
     state = {
         isEditMode: false,
-        value: this.props.text
+        value: this.props.text,
+        isError: false,
     }
 
     onInputChange = (event) => {
@@ -18,14 +21,22 @@ class TodoListItem extends Component {
     }
 
     onItemEdit = () => {
+        if (!validateInput(this.state.value)) {
+            this.setState({
+                isError: true
+            })
+            return;
+        }
         if (this.state.isEditMode) {
             this.props.onEdit(this.props.id, this.state.value)
             this.setState({
-                isEditMode: false
+                isEditMode: false,
+                isError: false
             })
         } else {
             this.setState({
-                isEditMode: true
+                isEditMode: true,
+                isError: false
             })
         }
     }
@@ -37,21 +48,32 @@ class TodoListItem extends Component {
             color: done ? "#aaa" : important ? "#EF6262" : "blue",
             fontWeight: done ? "normal" : important ? "bold" : "unset",
             textDecoration: done ? "line-through" : "none",
+        }
 
-
+        const inputStyle = {
+            borderColor: this.state.isError ? "red" : "#ccc"
         }
 
         return (<div className="listItem">
             <div className="taskContainer">
                 {this.state.isEditMode ? (
-                    <input className="edit-input" value={this.state.value} onChange={this.onInputChange} />
+                    <div className="item-input-wrapper">
+                        <input
+                            style={inputStyle}
+                            className="edit-input"
+                            value={this.state.value}
+                            onChange={this.onInputChange} />
+                        {
+                            this.state.isError ? <span className="input-err-message" >error</span> : null
+                        }
+                    </div>
                 ) : (
                     <li className="task" onClick={onDone} style={textStyle}> {text}</li>
 
                 )}
             </div>
             <div className="buttonContainer">
-                <button className="edit-btn" onClick={this.onItemEdit}><FaPen /></button>
+                <button className="edit-btn" onClick={this.onItemEdit}> {this.state.isEditMode ? <FaCircleCheck /> : <FaPen />}</button>
                 <button className="done-btn" onClick={onDone}><FaCheck /></button>
                 <button className="important-btn" onClick={onImportant}><FaExclamation /></button>
                 <button className="delete-btn" onClick={onClick}><FaTrash /></button>

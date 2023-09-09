@@ -1,26 +1,37 @@
 import { Component } from "react"
 import "./addItem.css"
 import AllertMessage from "../AlertMessage/AlertMessage"
+import { validateInput } from "../../utils/validator"
 
 
 class AddItem extends Component {
 
   state = {
-    inputValue: ""
+    inputValue: "",
+    isError: false
   }
   InputHandler = (event) => {
     this.setState({
-      inputValue: event.target.value
+      inputValue: event.target.value,
+      isError: false
     })
   }
 
   onBtnClick = () => {
+    if (!validateInput(this.state.inputValue)) {
+      this.setState({
+        isError: true
+      })
+      return
+    }
+
     this.props.AddItemHandler(this.state.inputValue);
     this.setState({ inputValue: "" })
   }
   render() {
     return (<div>
       <div className="AddItem" >
+
         <input
           className="addInput"
           value={this.state.inputValue}
@@ -29,7 +40,7 @@ class AddItem extends Component {
         />
         <button className="addBtn" onClick={this.onBtnClick}>Add</button>
       </div>
-      <AllertMessage text="Error Message" type="error" />
+      {this.state.isError ? <AllertMessage text="Error Message" type="error" /> : null}
     </div>
     )
   }
