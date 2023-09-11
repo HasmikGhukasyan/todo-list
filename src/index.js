@@ -72,26 +72,40 @@ class App extends Component {
   }
 
   doneHandler = (id) => {
-    this.setState(({ items }) => {
-      const arr = [...items];
-      const idx = arr.findIndex((el) => el.id === id);
-      arr[idx].done = !arr[idx].done;
-      return {
-        items: arr,
-      };
-    });
-  };
+    function mapper(el) {
+      if (el.id === id) {
+        return {
+          ...el,
+          done: !el.done
+        }
+      }
+      return el
+    }
+
+    this.setState(({ filteredItems, items }) => ({
+      filteredItems: filteredItems.map(mapper),
+      items: items.map(mapper)
+    }))
+  }
+
 
   importantHandler = (id) => {
-    this.setState(({ items }) => {
-      const arr = [...items];
-      const idx = arr.findIndex((el) => el.id === id);
-      arr[idx].important = !arr[idx].important;
+    function mapper(el) {
+      if (el.id === id) {
+        return {
+          ...el,
+          important: !el.important
+        }
+      }
+      return el
+    }
+    this.setState(({ items, filteredItems }) => {
       return {
-        items: arr,
-      };
-    });
-  };
+        filteredItems: filteredItems.map(mapper),
+        items: items.map(mapper)
+      }
+    })
+  }
 
   AddItemHandler = (text) => {
     const id = this.state.items.length
@@ -144,7 +158,7 @@ class App extends Component {
       <div className="App">
         <Header done={8} important={23} />
         <div className="main">
-          <Search searchAllHandler={this.searchAllHandler} doneFilterHandler={this.doneFilterHandler} importantFilterHandler={this.importantFilterHandler} searchHandler={this.searchHandler} />
+          <Search filteredItemsLength={this.state.filteredItems.length} searchAllHandler={this.searchAllHandler} doneFilterHandler={this.doneFilterHandler} importantFilterHandler={this.importantFilterHandler} searchHandler={this.searchHandler} />
           <TodoList
             items={this.state.filteredItems}
             doneHandler={this.doneHandler}

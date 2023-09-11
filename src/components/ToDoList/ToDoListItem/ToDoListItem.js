@@ -50,11 +50,11 @@ class TodoListItem extends Component {
         }
 
         const inputStyle = {
-            borderColor: this.state.isError ? "red" : "#ccc"
+            borderColor: this.state.isError ? "red" : "#c998f5"
         }
 
         return (<div className="listItem">
-            <div className="taskContainer">
+            <div className={`taskContainer ${this.state.isEditMode ? "padding-0" : null}`}>
                 {this.state.isEditMode ? (
                     <div className="item-input-wrapper">
                         <input
@@ -63,7 +63,7 @@ class TodoListItem extends Component {
                             value={this.state.value}
                             onChange={this.onInputChange} />
                         {
-                            this.state.isError ? <span className="input-err-message" >error</span> : null
+                            this.state.isError ? <span className="input-error-message" >Must contain 3 and more characters</span> : null
                         }
                     </div>
                 ) : (
@@ -77,8 +77,7 @@ class TodoListItem extends Component {
                 <button className="important-btn" onClick={onImportant}><FaExclamation /></button>
                 <button className="delete-btn" onClick={onClick}><FaTrash /></button>
             </div>
-        </div>
-
+        </div >
         )
     }
 }

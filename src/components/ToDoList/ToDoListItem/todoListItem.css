@@ -39,6 +39,7 @@
     padding: 8px;
     border-color: #c998f5;
     width: 100%;
+    font-family: ;
     font-size: 16px;
     border-radius: 4px;
     cursor: pointer;
@@ -81,17 +82,22 @@
 
 .item-input-wrapper {
     display: flex;
-    background-color: white;
-    padding: 8px;
+    flex-direction: column;
     width: 184px;
     border-radius: 4px;
     cursor: pointer;
+    border-color: #c998f5;
 
 }
 
 .input-error-message {
     display: flex;
-    font-size: 8px;
+    font-size: 12px;
     color: red;
-    margin-left: 1px;
+    margin-top: 4px;
+    padding-left: 8px;
+}
+
+.padding-0 {
+    padding: 0;
 }

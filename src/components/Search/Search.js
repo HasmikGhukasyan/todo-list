@@ -5,8 +5,10 @@ import AllertMessage from "../AlertMessage/AlertMessage";
 
 class Search extends Component {
   state = {
-    value: ""
+    value: "",
   }
+
+
 
   onSearch = (event) => {
     this.setState({
@@ -38,7 +40,7 @@ class Search extends Component {
           <button className="search-btn-all" onClick={this.onsearchAll}>All</button>
         </div>
       </div>
-      <AllertMessage type="info" text="Info message" />
+      {this.props.filteredItemsLength === 0 ? <AllertMessage type="info" text="No Results..." /> : null}
     </div>
     )
   }
