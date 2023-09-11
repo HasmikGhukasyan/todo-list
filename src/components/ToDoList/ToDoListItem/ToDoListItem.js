@@ -2,7 +2,6 @@ import { Component } from "react"
 import "./todoListItem.css"
 import { FaTrash, FaCheck, FaExclamation, FaPen, FaCircleCheck } from "react-icons/fa6"
 import { validateInput } from "../../../utils/validator"
-import AllertMessage from "../../AlertMessage/AlertMessage"
 
 
 

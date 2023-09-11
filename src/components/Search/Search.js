@@ -14,8 +14,18 @@ class Search extends Component {
     })
     this.props.searchHandler(event.target.value)
   }
+  onsearchAll = () => {
+    this.props.searchAllHandler()
+  }
 
+  onDone = () => {
+    this.props.doneFilterHandler()
+  }
 
+  onImportant = () => {
+    this.props.importantFilterHandler()
+
+  }
 
   render() {
     return (<div>
@@ -23,9 +33,9 @@ class Search extends Component {
       <div className="searchcontainer">
         <input value={this.state.value} onChange={this.onSearch} className="searchInput" placeholder="Search..." />
         <div className="search-btn-container">
-          <button className="search-btn-done" >Done</button>
-          <button className="search-btn-important">Important</button>
-          <button className="search-btn-all">All</button>
+          <button className="search-btn-done" onClick={this.onDone} >Done</button>
+          <button className="search-btn-important" onClick={this.onImportant}>Important</button>
+          <button className="search-btn-all" onClick={this.onsearchAll}>All</button>
         </div>
       </div>
       <AllertMessage type="info" text="Info message" />
