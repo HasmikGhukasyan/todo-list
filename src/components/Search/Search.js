@@ -12,9 +12,9 @@ class Search extends Component {
 
   onSearch = (event) => {
     this.setState({
-      value: event.target.value
+      value: event.target.value.trim()
     })
-    this.props.searchHandler(event.target.value)
+    this.props.searchHandler(event.target.value.trim())
   }
   onsearchAll = () => {
     this.props.searchAllHandler()

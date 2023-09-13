@@ -21,6 +21,8 @@ class App extends Component {
     importantMode: false,
   };
 
+
+
   searchAllHandler = () => {
     this.setState({
       filteredItems: this.state.items
@@ -64,6 +66,7 @@ class App extends Component {
   }
 
   searchHandler = (text) => {
+    console.log(text)
     this.setState(({ items }) => {
       return {
         filteredItems: items.filter(el => el.text.toLowerCase().includes(text.toLowerCase()))
@@ -156,7 +159,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header done={8} important={23} />
+        <Header
+          done={this.state.items.reduce((acc, el) => {
+            return acc + (el.done ? 1 : 0)
+          }, 0)}
+          important={this.state.items.reduce((acc, el) => {
+            return acc + (el.important ? 1 : 0);
+          }, 0)} />
         <div className="main">
           <Search filteredItemsLength={this.state.filteredItems.length} searchAllHandler={this.searchAllHandler} doneFilterHandler={this.doneFilterHandler} importantFilterHandler={this.importantFilterHandler} searchHandler={this.searchHandler} />
           <TodoList
